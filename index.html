@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f4f1;
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+                url("foto jkk.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 70px;
+        }
+
+        .hero h2 {
+            margin: 15px 0;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+
+        .couple {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        }
+
+        .card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .event-box {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .time {
+            background: #d4af37;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 90px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background: #222;
+            color: white;
+            padding: 30px;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="hero">
+        <div>
+            <h2>The Wedding Of</h2>
+            <h1>Yudi & Anggi</h1>
+            <br>
+            <button class="btn" onclick="bukaUndangan()">
+                Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <section id="isi">
+        <h1 class="title">Syalom</h1>
+
+        <p>
+            Dengan Tuhan yang mahakuasa,
+            kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.
+        </p>
+
+        <br><br>
+
+        <div class="couple">
+
+            <div class="card">
+                <img src="foto jkp.jpg">
+                <h2>Yudi</h2>
+                <p>Putra dari</p>
+                <p>Bapak .... & Ibu ....</p>
+            </div>
+
+            <div class="card">
+                <img src="foto jii.jpg">
+                <h2>Anggi</h2>
+                <p>Putri dari</p>
+                <p>Bapak .... & Ibu ....</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+
+        <h1 class="title">Save The Date</h1>
+
+        <div class="event-box">
+            <h2>Minggu, 20 Desember 2026</h2>
+            <br>
+            <p><b>Akad Nikah :</b> 09.00 WIB</p>
+            <p><b>Resepsi :</b> 11.00 WIB - Selesai</p>
+            <br>
+            <p>Gedung SCC Palopo</p>
+
+            <div class="countdown">
+                <div class="time">
+                    <h2 id="hari">0</h2>
+                    Hari
+                </div>
+
+                <div class="time">
+                    <h2 id="jam">0</h2>
+                    Jam
+                </div>
+
+                <div class="time">
+                    <h2 id="menit">0</h2>
+                    Menit
+                </div>
+
+                <div class="time">
+                    <h2 id="detik">0</h2>
+                    Detik
+                </div>
+            </div>
+
+            <br>
+
+            <a class="btn" href="https://maps.google.com" target="_blank">
+                Lihat Lokasi
+            </a>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h1 class="title">Galeri</h1>
+
+        <div class="gallery">
+            <img src="foto jpp.jpg">
+            <img src="foto jyy.jpg">
+            <img src="foto jrr.jpg">
+            <img src="foto jll.jpg">
+        </div>
+
+    </section>
+
+    <section class="footer">
+
+        <h2>Terima Kasih</h2>
+
+        <br>
+
+        <p>
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami
+            apabila Bapak/Ibu/Saudara/i berkenan hadir.
+        </p>
+
+        <br>
+
+        <h3>Yudi & Anggi</h3>
+
+    </section>
+
+    <audio id="musik" loop>
+        <!-- Ganti dengan file musik sendiri -->
+        <source src="musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+
+        function bukaUndangan() {
+            document.getElementById("isi").scrollIntoView({
+                behavior: "smooth"
+            });
+
+            document.getElementById("musik").play();
+        }
+
+        var target = new Date("December 20, 2026 09:00:00").getTime();
+
+        setInterval(function () {
+
+            var sekarang = new Date().getTime();
+            var selisih = target - sekarang;
+
+            var hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+            var jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+            var detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+            document.getElementById("hari").innerHTML = hari;
+            document.getElementById("jam").innerHTML = jam;
+            document.getElementById("menit").innerHTML = menit;
+            document.getElementById("detik").innerHTML = detik;
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>
+```
