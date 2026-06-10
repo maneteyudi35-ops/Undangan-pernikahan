@@ -1,0 +1,246 @@
+// ================================
+// COUNTDOWN WEDDING
+// ================================
+
+const weddingDate = new Date("December 12, 2026 08:00:00").getTime();
+
+const countdown = setInterval(() => {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if (distance < 0) {
+
+        clearInterval(countdown);
+
+        document.getElementById("days").innerHTML = "0";
+        document.getElementById("hours").innerHTML = "0";
+        document.getElementById("minutes").innerHTML = "0";
+        document.getElementById("seconds").innerHTML = "0";
+    }
+
+}, 1000);
+
+// ================================
+// BUKA UNDANGAN
+// ================================
+
+function bukaUndangan() {
+
+    const cover = document.getElementById("cover");
+
+    if (cover) {
+        cover.style.display = "none";
+    }
+
+    document.body.style.overflow = "auto";
+
+    const music = document.getElementById("music");
+
+    if (music) {
+        music.play();
+    }
+}
+
+// ================================
+// PLAY / PAUSE MUSIK
+// ================================
+
+function toggleMusic() {
+
+    const music = document.getElementById("music");
+
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+
+// ================================
+// COPY REKENING
+// ================================
+
+function copyRekening() {
+
+    const rekening = "1234567890";
+
+    navigator.clipboard.writeText(rekening);
+
+    alert("Nomor rekening berhasil disalin");
+}
+
+// ================================
+// COPY DANA
+// ================================
+
+function copyDana() {
+
+    const dana = "081234567890";
+
+    navigator.clipboard.writeText(dana);
+
+    alert("Nomor DANA berhasil disalin");
+}
+
+// ================================
+// RSVP UCAPAN
+// ================================
+
+const form = document.getElementById("rsvpForm");
+
+if(form){
+
+    form.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const nama =
+            document.getElementById("nama").value;
+
+        const ucapan =
+            document.getElementById("ucapan").value;
+
+        if(nama === "" || ucapan === ""){
+
+            alert("Lengkapi data terlebih dahulu");
+
+            return;
+        }
+
+        const listUcapan =
+            document.getElementById("listUcapan");
+
+        const div =
+            document.createElement("div");
+
+        div.classList.add("ucapan-item");
+
+        div.innerHTML = `
+            <h4>${nama}</h4>
+            <p>${ucapan}</p>
+            <hr>
+        `;
+
+        listUcapan.prepend(div);
+
+        form.reset();
+
+        alert("Terima kasih atas doa dan ucapannya");
+    });
+
+}
+
+// ================================
+// SCROLL ANIMATION
+// ================================
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+        }
+
+    });
+
+});
+
+const hiddenElements =
+document.querySelectorAll(".hidden");
+
+hiddenElements.forEach((el)=>{
+    observer.observe(el);
+});
+
+// ================================
+// SCROLL KE SECTION
+// ================================
+
+function scrollToSection(id){
+
+    document.getElementById(id)
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+// ================================
+// SAPA TAMU DARI URL
+// contoh:
+// index.html?to=Bang%20Yud
+// ================================
+
+const params =
+new URLSearchParams(window.location.search);
+
+const guestName =
+params.get("to");
+
+if(guestName){
+
+    const guest =
+    document.getElementById("guestName");
+
+    if(guest){
+
+        guest.innerHTML =
+        guestName.replace(/\+/g, " ");
+    }
+}
+
+// ================================
+// TOMBOL KEMBALI KE ATAS
+// ================================
+
+window.onscroll = function(){
+
+    const btn =
+    document.getElementById("topBtn");
+
+    if(!btn) return;
+
+    if(document.body.scrollTop > 300 ||
+       document.documentElement.scrollTop > 300){
+
+        btn.style.display = "block";
+
+    }else{
+
+        btn.style.display = "none";
+    }
+};
+
+function topFunction(){
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+}

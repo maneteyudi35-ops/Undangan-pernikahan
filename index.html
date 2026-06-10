@@ -4,59 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <title>Undangan Pernikahan yud & Helfi</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #f8f4f1;
-            color: #444;
-            overflow-x: hidden;
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url("foto jkk.jpg");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 70px;
-        }
-
-        .hero h2 {
-            margin: 15px 0;
-            font-size: 24px;
-            font-weight: 300;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background: #d4af37;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 18px;
-            text-decoration: none;
+            background: #f8f4f0;
+            color: #333;
+            line-height: 1.6;
         }
 
         section {
@@ -64,13 +25,39 @@
             text-align: center;
         }
 
-        .title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 50px;
-            color: #b8860b;
-            margin-bottom: 20px;
+        .container {
+            max-width: 1000px;
+            margin: auto;
         }
 
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+                url('foto jkk.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* MEMPELAI */
         .couple {
             display: flex;
             justify-content: center;
@@ -79,10 +66,10 @@
         }
 
         .card {
+            width: 300px;
             background: white;
-            padding: 20px;
             border-radius: 15px;
-            width: 250px;
+            padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
         }
 
@@ -94,54 +81,96 @@
             margin-bottom: 15px;
         }
 
+        /* ACARA */
         .event-box {
             background: white;
-            max-width: 700px;
-            margin: auto;
-            padding: 30px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 600px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
         }
 
+        /* COUNTDOWN */
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .time {
+        .time-box {
             background: #d4af37;
             color: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            width: 90px;
+            width: 100px;
         }
 
+        .time-box h2 {
+            font-size: 2rem;
+        }
+
+        /* GALERI */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
-            max-width: 1000px;
-            margin: auto;
         }
 
         .gallery img {
             width: 100%;
             border-radius: 10px;
-            height: 220px;
-            object-fit: cover;
         }
 
-        .footer {
+        /* AMPLOP DIGITAL */
+        .bank {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        }
+
+        .bank p {
+            margin: 10px 0;
+        }
+
+        /* RSVP */
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        footer {
             background: #222;
             color: white;
-            padding: 30px;
-        }
-
-        audio {
-            display: none;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 
@@ -149,157 +178,192 @@
 
 <body>
 
-    <div class="hero">
-        <div>
-            <h2>The Wedding Of</h2>
-            <h1>Yudi & Anggi</h1>
-            <br>
-            <button class="btn" onclick="bukaUndangan()">
-                Buka Undangan
-            </button>
-        </div>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Wedding Invitation</h1>
+        <p>Dengan Memohon Rahmat dan Ridho Allah SWT</p>
+        <h2>Yudi & Helfi</h2>
+        <p>12 Desember 2026</p>
+    </section>
 
-    <section id="isi">
-        <h1 class="title">Syalom</h1>
-
-        <p>
-            Dengan Tuhan yang mahakuasa,
-            kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.
-        </p>
-
-        <br><br>
-
-        <div class="couple">
-
-            <div class="card">
-                <img src="foto jkp.jpg">
-                <h2>Yudi</h2>
-                <p>Putra dari</p>
-                <p>Bapak .... & Ibu ....</p>
-            </div>
-
-            <div class="card">
-                <img src="foto jii.jpg">
-                <h2>Anggi</h2>
-                <p>Putri dari</p>
-                <p>Bapak .... & Ibu ....</p>
-            </div>
-
+    <!-- PEMBUKA -->
+    <section>
+        <div class="container">
+            <h2>Syalom</h2>
+            <p>
+                Dengan segala kerendahan hati kami mengundang
+                Bapak/Ibu/Saudara/i untuk hadir dalam acara
+                pernikahan kami.
+            </p>
         </div>
     </section>
 
+    <!-- MEMPELAI -->
     <section>
+        <div class="container">
+            <h2>Mempelai</h2>
+            <br><br>
 
-        <h1 class="title">Save The Date</h1>
+            <div class="couple">
 
-        <div class="event-box">
-            <h2>Minggu, 20 Desember 2026</h2>
+                <div class="card">
+                    <img src="foto jkp.jpg" alt="">
+                    <h3>Yudi</h3>
+                    <p>Putra Pertama</p>
+                    <p>Bapak Ahmad & Ibu Fatimah</p>
+                </div>
+
+                <div class="card">
+                    <img src="foto jii.jpg" alt="">
+                    <h3>Helfi</h3>
+                    <p>Putri Pertama</p>
+                    <p>Bapak Hasan & Ibu Aminah</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ACARA -->
+    <section>
+        <div class="container">
+            <h2>Detail Acara</h2>
+
+            <div class="event-box">
+                <h3>Akad Nikah</h3>
+                <p>Sabtu, 12 Desember 2026</p>
+                <p>08.00 WIB</p>
+                <p>Gedung SCC Palopo</p>
+            </div>
+
+            <div class="event-box">
+                <h3>Resepsi</h3>
+                <p>Sabtu, 12 Desember 2026</p>
+                <p>11.00 WIB - Selesai</p>
+                <p>Gedung Serbaguna Kota palopo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section>
+        <div class="container">
+            <h2>Hitung Mundur Acara</h2>
             <br>
-            <p><b>Akad Nikah :</b> 09.00 WIB</p>
-            <p><b>Resepsi :</b> 11.00 WIB - Selesai</p>
-            <br>
-            <p>Gedung SCC Palopo</p>
 
             <div class="countdown">
-                <div class="time">
-                    <h2 id="hari">0</h2>
-                    Hari
+                <div class="time-box">
+                    <h2 id="days">0</h2>
+                    <p>Hari</p>
                 </div>
 
-                <div class="time">
-                    <h2 id="jam">0</h2>
-                    Jam
+                <div class="time-box">
+                    <h2 id="hours">0</h2>
+                    <p>Jam</p>
                 </div>
 
-                <div class="time">
-                    <h2 id="menit">0</h2>
-                    Menit
+                <div class="time-box">
+                    <h2 id="minutes">0</h2>
+                    <p>Menit</p>
                 </div>
 
-                <div class="time">
-                    <h2 id="detik">0</h2>
-                    Detik
+                <div class="time-box">
+                    <h2 id="seconds">0</h2>
+                    <p>Detik</p>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- GALERI -->
+    <section>
+        <div class="container">
+            <h2>Galeri Foto</h2>
+            <br><br>
+
+            <div class="gallery">
+                <img src="foto jpp.jpg">
+                <img src="foto jll.jpg">
+                <img src="foto jrr.jpg">
+                <img src="foto jyy.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKASI -->
+    <section>
+        <div class="container">
+            <h2>Lokasi Acara</h2>
             <br>
 
-            <a class="btn" href="https://maps.google.com" target="_blank">
-                Lihat Lokasi
-            </a>
-
+            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="350" style="border:0;"
+                allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
-
     </section>
 
+    <!-- AMPLOP DIGITAL -->
     <section>
+        <div class="container">
+            <h2>Amplop Digital</h2>
+            <br>
 
-        <h1 class="title">Galeri</h1>
+            <div class="bank">
+                <h3>Bank BCA</h3>
+                <p>1234567890</p>
+                <p>Yudi</p>
 
-        <div class="gallery">
-            <img src="foto jpp.jpg">
-            <img src="foto jyy.jpg">
-            <img src="foto jrr.jpg">
-            <img src="foto jll.jpg">
+                <hr><br>
+
+                <h3>DANA</h3>
+                <p>081234567890</p>
+                <p>Helfi</p>
+            </div>
         </div>
-
     </section>
 
-    <section class="footer">
+    <!-- RSVP -->
+    <section>
+        <div class="container">
+            <h2>Konfirmasi Kehadiran</h2>
 
-        <h2>Terima Kasih</h2>
-
-        <br>
-
-        <p>
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami
-            apabila Bapak/Ibu/Saudara/i berkenan hadir.
-        </p>
-
-        <br>
-
-        <h3>Yudi & Anggi</h3>
-
+            <form>
+                <input type="text" placeholder="Nama Anda">
+                <textarea rows="5" placeholder="Ucapan & Doa"></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
     </section>
 
-    <audio id="musik" loop>
-        <!-- Ganti dengan file musik sendiri -->
-        <source src="musik.mp3" type="audio/mpeg">
-    </audio>
+    <footer>
+        <p>Terima Kasih Atas Doa dan Kehadirannya</p>
+        <p>Yudi & Helfi</p>
+    </footer>
 
     <script>
+        const targetDate = new Date("Dec 12, 2026 08:00:00").getTime();
 
-        function bukaUndangan() {
-            document.getElementById("isi").scrollIntoView({
-                behavior: "smooth"
-            });
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
-            document.getElementById("musik").play();
-        }
+            document.getElementById("days").innerHTML =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
 
-        var target = new Date("December 20, 2026 09:00:00").getTime();
+            document.getElementById("hours").innerHTML =
+                Math.floor((distance % (1000 * 60 * 60 * 24))
+                    / (1000 * 60 * 60));
 
-        setInterval(function () {
+            document.getElementById("minutes").innerHTML =
+                Math.floor((distance % (1000 * 60 * 60))
+                    / (1000 * 60));
 
-            var sekarang = new Date().getTime();
-            var selisih = target - sekarang;
-
-            var hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-            var jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
-            var detik = Math.floor((selisih % (1000 * 60)) / 1000);
-
-            document.getElementById("hari").innerHTML = hari;
-            document.getElementById("jam").innerHTML = jam;
-            document.getElementById("menit").innerHTML = menit;
-            document.getElementById("detik").innerHTML = detik;
-
+            document.getElementById("seconds").innerHTML =
+                Math.floor((distance % (1000 * 60))
+                    / 1000);
         }, 1000);
-
     </script>
 
 </body>
 
 </html>
-```
